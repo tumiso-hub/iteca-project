@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacDee Sporting Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>MacDee Sporting Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="team-select">
+            <h2>Select Your Team</h2>
+            <select id="teamSelect" onchange="filterProducts()">
+                <option value="all">All Teams</option>
+                <option value="orlando-pirates">Orlando Pirates</option>
+                <option value="mamelodi-sundowns">Mamelodi Sundowns</option>
+                <option value="supersport-united">Supersport United</option>
+                <option value="kaizer-chiefs">Kaizer Chiefs</option>
+            </select>
+        </section>
+
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-item orlando-pirates">
+                <h3>Team Jerseys</h3>
+                <p>Orlando Pirates - High-quality jerseys for your team.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item mamelodi-sundowns">
+                <h3>Team Shorts</h3>
+                <p>Mamelodi Sundowns - Comfortable and durable shorts for your team.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item supersport-united">
+                <h3>Team Hats</h3>
+                <p>Supersport United - Another design of comfortable and durable shorts.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-item kaizer-chiefs">
+                <h3>Team Flags</h3>
+                <p>Kaizer Chiefs - Flags to show off your team spirit.</p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+        <section class="special-orders">
+            <h2>Special Orders</h2>
+            <p>If you need merchandise for specific teams, call us at <strong>0817753421</strong></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MacDee Sporting Shop</p>
+    </footer>
+
+    <script>
+        function filterProducts() {
+            var selectedTeam = document.getElementById("teamSelect").value;
+            var products = document.getElementsByClassName("product-item");
+
+            for (var i = 0; i < products.length; i++) {
+                if (selectedTeam == "all") {
+                    products[i].style.display = "block";
+                } else if (products[i].classList.contains(selectedTeam)) {
+                    products[i].style.display = "block";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
